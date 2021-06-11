@@ -18,7 +18,7 @@ FROM alpine:3.10
 ARG FLYWAY_VERSION=7.7.2
 WORKDIR /flyway
 
-RUN apk add --no-cache --update openjdk8-jre bash gettext
+RUN apk add --no-cache --update openjdk8-jre-base bash gettext
 RUN wget -q https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/${FLYWAY_VERSION}/flyway-commandline-${FLYWAY_VERSION}.tar.gz \
     && tar -xzf flyway-commandline-${FLYWAY_VERSION}.tar.gz && mv flyway-${FLYWAY_VERSION}/* . \
     && rm flyway-commandline-${FLYWAY_VERSION}.tar.gz \
